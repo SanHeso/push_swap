@@ -6,23 +6,39 @@
 /*   By: hnewman <hnewman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 18:13:44 by hnewman           #+#    #+#             */
-/*   Updated: 2021/06/14 15:34:33 by hnewman          ###   ########.fr       */
+/*   Updated: 2021/06/18 19:56:08 by hnewman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pusw.h"
 
-int	atoi_mod(char *str)
+void	init_stack(t_all *all)
 {
-	int	i;
+	all->size_a = 0;
+	all->size_b = 0;
+	all->stck_a = NULL;
+	all->stck_b = NULL;
+}
 
-	i = -1;
-	if (!str)
-		return (-1);
-	while (str[i] >= '0' && str[i] <= '9')
+void	r_rrr(t_all *all)
+{
+	r_rra(all->stck_a, all->size_a);
+	r_rrb(all->stck_b, all->size_b);
+	write(1, "rrr\n", 4);
+}
+
+int	*rev_stack(int *arr, int size)
+{
+	int	*rev;
+	int	i;
+	int	j;
+
+	i = 0;
+	j = size;
+	while (i < size)
 	{
-		i = i * 10 + (str[i] - '0');
+		rev[i] = arr[j];
 		i++;
+		j--;
 	}
-	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: hnewman <hnewman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/09 19:45:23 by hnewman           #+#    #+#             */
-/*   Updated: 2021/06/14 19:04:18 by hnewman          ###   ########.fr       */
+/*   Updated: 2021/06/17 17:28:54 by hnewman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,6 @@ int	main(int argc, char **argv)
 {
 	t_all	all;
 
+	init_stack(&all);
 	valid_arg(&all, argc, argv);
 }
