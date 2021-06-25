@@ -6,17 +6,19 @@
 /*   By: hnewman <hnewman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 18:13:44 by hnewman           #+#    #+#             */
-/*   Updated: 2021/06/18 19:56:08 by hnewman          ###   ########.fr       */
+/*   Updated: 2021/06/25 20:01:47 by hnewman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pusw.h"
+#include "../include/pusw.h"
 
-void	init_stack(t_all *all)
+void	init_stack(t_all *all, int argc)
 {
-	all->size_a = 0;
+	all->size_a = argc;
 	all->size_b = 0;
-	all->stck_a = NULL;
+	all->stck_a = (int *)malloc(sizeof(int *) * all->size_a);
+	if (!all->stck_a)
+		error(NO_MAL);
 	all->stck_b = NULL;
 }
 
@@ -27,18 +29,21 @@ void	r_rrr(t_all *all)
 	write(1, "rrr\n", 4);
 }
 
-int	*rev_stack(int *arr, int size)
+int	*rev_stack(char **arg, int *arr, int size)
 {
-	int	*rev;
 	int	i;
 	int	j;
 
 	i = 0;
-	j = size;
-	while (i < size)
+	while (arg[++i])
+		arr[i] = ft_atoi(arg[i]);
+	i = 0;
+	while (i <= size / 2)
 	{
-		rev[i] = arr[j];
+		j = arr[i];
+		arr[i] = arr[size - i];
+		arr[size - i] = j;
 		i++;
-		j--;
 	}
+	return (arr);
 }

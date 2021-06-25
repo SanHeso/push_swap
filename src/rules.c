@@ -6,11 +6,11 @@
 /*   By: hnewman <hnewman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/10 16:36:45 by hnewman           #+#    #+#             */
-/*   Updated: 2021/06/17 17:35:47 by hnewman          ###   ########.fr       */
+/*   Updated: 2021/06/25 16:38:39 by hnewman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pusw.h"
+#include "../include/pusw.h"
 
 void	r_sa(int *s_a, int size)
 {
@@ -40,8 +40,8 @@ void	r_sb(int *s_b, int size)
 
 void	r_ss(t_all *all)
 {
-	sa(all->stck_a, all->size_a);
-	sb(all->stck_b, all->size_b);
+	r_sa(all->stck_a, all->size_a);
+	r_sb(all->stck_b, all->size_b);
 	write(1, "ss\n", 3);
 }
 

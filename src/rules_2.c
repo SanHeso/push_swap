@@ -6,11 +6,11 @@
 /*   By: hnewman <hnewman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/17 17:32:56 by hnewman           #+#    #+#             */
-/*   Updated: 2021/06/18 19:55:13 by hnewman          ###   ########.fr       */
+/*   Updated: 2021/06/25 16:39:18 by hnewman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pusw.h"
+#include "../include/pusw.h"
 
 void	r_ra(int *s_a, int size)
 {
